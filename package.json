@@ -9,9 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@better-auth/mongo-adapter": "^1.7.7",
+    "better-auth": "^1.7.7",
+    "daisyui": "^5.7.47",
+    "mongodb": "^7.7.0",
     "next": "16.4.0",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-hot-toast": "^2.6.1"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
