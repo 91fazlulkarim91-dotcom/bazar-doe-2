@@ -3,7 +3,7 @@ import { type Product } from "@/lib/utils";
 
 export default function AllProducts({ products }: { products: Product[] }) {
   return (
-    <section id="সব-পণ্য" className="py-8">
+    <section id="সব-পণ্য" className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-800">সব পণ্য</h2>

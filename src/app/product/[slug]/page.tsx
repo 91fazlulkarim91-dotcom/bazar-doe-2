@@ -48,7 +48,7 @@ export default async function ProductPage({
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8 bg-white text-black">
       {/* Breadcrumb */}
       <div className="breadcrumbs text-sm mb-6">
         <ul>
@@ -102,26 +102,26 @@ export default async function ProductPage({
       </div>
 
       {/* Price Summary Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <div className="bg-green-50 border border-green-100 rounded-xl p-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 ">
+        <div className="  border border-green-100 rounded-xl p-4">
           <p className="text-sm text-gray-500">সর্বনিম্ন দাম</p>
           <p className="text-xl font-bold text-green-700">
             {formatPrice(minPrice)} <span className="text-sm font-normal">টাকা</span>
           </p>
         </div>
-        <div className="bg-red-50 border border-red-100 rounded-xl p-4">
+        <div className="border border-red-100 rounded-xl p-4">
           <p className="text-sm text-gray-500">সর্বোচ্চ দাম</p>
           <p className="text-xl font-bold text-red-600">
             {formatPrice(maxPrice)} <span className="text-sm font-normal">টাকা</span>
           </p>
         </div>
-        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
+        <div className=" border border-blue-100 rounded-xl p-4">
           <p className="text-sm text-gray-500">গড় দাম</p>
           <p className="text-xl font-bold text-blue-600">
             {formatPrice(avgPrice)} <span className="text-sm font-normal">টাকা</span>
           </p>
         </div>
-        <div className="bg-yellow-50 border border-yellow-100 rounded-xl p-4">
+        <div className="border border-yellow-100 rounded-xl p-4">
           <p className="text-sm text-gray-500">আজকের দাম</p>
           <p className="text-xl font-bold text-gray-800">
             {formatPrice(product.today)} <span className="text-sm font-normal">টাকা</span>
@@ -130,12 +130,12 @@ export default async function ProductPage({
       </div>
 
       {/* বাজারভিত্তিক আজকের দাম */}
-      <div className="mb-8">
+      <div className="mb-8 bg-white ">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           🏪 বাজারভিত্তিক আজকের দাম
         </h2>
 
-        <div className="space-y-6">
+        <div className="space-y-6 text-black">
           {Object.entries(marketsByDivision).map(([division, markets]) => (
             <div key={division}>
               <h3 className="text-lg font-semibold text-gray-700 mb-3 flex items-center gap-2">
@@ -174,19 +174,19 @@ export default async function ProductPage({
       <div className="bg-white border rounded-xl p-6">
         <h2 className="text-xl font-bold text-gray-800 mb-4">📊 দামের তুলনা</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center p-3 bg-gray-50 rounded-lg">
+          <div className="text-center p-3  rounded-lg">
             <p className="text-sm text-gray-500">আজ</p>
             <p className="text-lg font-bold">{formatPrice(product.today)} টাকা</p>
           </div>
-          <div className="text-center p-3 bg-gray-50 rounded-lg">
+          <div className="text-center p-3  rounded-lg">
             <p className="text-sm text-gray-500">গতকাল</p>
             <p className="text-lg font-bold">{formatPrice(product.yesterday)} টাকা</p>
           </div>
-          <div className="text-center p-3 bg-gray-50 rounded-lg">
+          <div className="text-center p-3  rounded-lg">
             <p className="text-sm text-gray-500">গত সপ্তাহ</p>
             <p className="text-lg font-bold">{formatPrice(product.lastWeek)} টাকা</p>
           </div>
-          <div className="text-center p-3 bg-gray-50 rounded-lg">
+          <div className="text-center p-3  rounded-lg">
             <p className="text-sm text-gray-500">গত মাস</p>
             <p className="text-lg font-bold">{formatPrice(product.lastMonth)} টাকা</p>
           </div>

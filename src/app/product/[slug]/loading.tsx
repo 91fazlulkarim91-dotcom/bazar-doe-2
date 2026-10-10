@@ -22,7 +22,7 @@ export default function ProductLoading() {
       {/* Price cards skeleton */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className="bg-gray-50 border rounded-xl p-4 space-y-2">
+          <div key={i} className=" border rounded-xl p-4 space-y-2">
             <div className="skeleton h-3 w-20"></div>
             <div className="skeleton h-7 w-28"></div>
           </div>

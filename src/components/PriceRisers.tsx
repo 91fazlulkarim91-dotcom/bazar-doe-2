@@ -10,7 +10,7 @@ export default function PriceRisers({ products }: { products: Product[] }) {
   if (risers.length === 0) return null;
 
   return (
-    <section className="py-8">
+    <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
           <span className="text-red-500">▲</span> আজ দাম বেড়েছে

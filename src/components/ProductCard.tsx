@@ -5,7 +5,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/product/${product.slug}`}
-      className="card bg-white border border-gray-100 hover:shadow-lg hover:border-green-200 transition-all duration-300 cursor-pointer group"
+      className="card  border-gray-100 hover:shadow-lg hover:border-green-200 transition-all duration-300 cursor-pointer group"
     >
       <div className="card-body p-4">
         {/* Top: Image + Name */}
@@ -30,19 +30,18 @@ export default function ProductCard({ product }: { product: Product }) {
             </p>
           </div>
           <span
-            className={`badge badge-sm ${
-              product.change.dir === "up"
-                ? "badge-error text-white"
-                : product.change.dir === "down"
+            className={`badge badge-sm ${product.change.dir === "up"
+              ? "badge-error text-white"
+              : product.change.dir === "down"
                 ? "badge-success text-white"
                 : "badge-ghost"
-            }`}
+              }`}
           >
             {product.change.dir === "up"
               ? `▲ ${toBengaliNumber(Math.abs(product.change.pct).toFixed(1))}%`
               : product.change.dir === "down"
-              ? `▼ ${toBengaliNumber(Math.abs(product.change.pct).toFixed(1))}%`
-              : `— ${toBengaliNumber("0.0")}%`}
+                ? `▼ ${toBengaliNumber(Math.abs(product.change.pct).toFixed(1))}%`
+                : `— ${toBengaliNumber("0.0")}%`}
           </span>
         </div>
       </div>

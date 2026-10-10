@@ -29,7 +29,7 @@ export default function Hero() {
 
         {/* Right Image */}
         <div className="flex-1 flex justify-center">
-          <div className="text-8xl md:text-9xl">🧺</div>
+          <img src="/bazar-hero.png" alt="Hero Image" />
         </div>
       </div>
     </section>

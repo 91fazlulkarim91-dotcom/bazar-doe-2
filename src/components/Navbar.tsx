@@ -29,7 +29,7 @@ export default function Navbar() {
           toast.success("সাইন আউট সফল হয়েছে!");
           router.push("/");
         },
- },
+      },
     });
   };
 
@@ -59,7 +59,7 @@ export default function Navbar() {
         </button>
 
         {/* Auth Buttons (Desktop) */}
-  <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2">
           {isPending ? (
             <span className="loading loading-spinner loading-sm"></span>
           ) : session ? (
@@ -89,7 +89,7 @@ export default function Navbar() {
                   <Link href="/profile">
                     <span>👤</span> আমার প্রোফাইল
                   </Link>
-    </li>
+                </li>
                 <li>
                   <button onClick={handleSignOut}>
                     <span>🚪</span> সাইন আউট
@@ -121,11 +121,10 @@ export default function Navbar() {
                   <li key={cat.slug}>
                     <Link
                       href={`/category/${cat.slug}`}
- className={`btn btn-sm ${
-                        isActive
-                          ? "btn-success text-white"
-                          : "btn-ghost text-gray-600 hover:bg-green-50"
-                      }`}
+                      className={`btn btn-sm ${isActive
+                        ? "btn-success text-white"
+                        : "btn-ghost text-gray-600 hover:bg-green-50"
+                        }`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       <span>{cat.icon}</span>
@@ -152,7 +151,7 @@ export default function Navbar() {
                       <Link href="/signin" className="btn btn-sm btn-outline btn-success flex-1">
                         সাইন ইন
                       </Link>
-                   <Link href="/signup" className="btn btn-sm btn-success text-white flex-1">
+                      <Link href="/signup" className="btn btn-sm btn-success text-white flex-1">
                         সাইন আপ
                       </Link>
                     </>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { Metadata } from "next";
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ["bengali", "latin"],

@@ -1,10 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8">
+    <footer className="bg-white text-gray-300 py-8">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left side */}
         <div className="flex items-center gap-2">
-          <span className="text-2xl">🛒</span>
           <div>
             <h3 className="text-lg font-bold text-white">বাজার দর</h3>
             <p className="text-sm text-gray-400">

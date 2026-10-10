@@ -50,11 +50,11 @@ export default function CategoryPage() {
       });
   }, [slug]);
 
-  // Sort products — numeric value দিয়ে sort করবে, Bengali numeral নয়
+
   const sortedProducts = [...products].sort((a, b) => {
     if (sortBy === "price-asc") return a.today - b.today;
     if (sortBy === "price-desc") return b.today - a.today;
-    return 0; // default — API order
+    return 0; 
   });
 
   // Loading State — Skeleton
@@ -106,7 +106,7 @@ export default function CategoryPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto bg-white px-4 py-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
@@ -118,7 +118,7 @@ export default function CategoryPage() {
             এই ক্যাটাগরিতে মোট {products.length}টি পণ্য
           </p>
         </div>
-        {/* Sort Dropdown (C1 Challenge) */}
+
         <SortDropdown value={sortBy} onChange={setSortBy} />
       </div>
 
