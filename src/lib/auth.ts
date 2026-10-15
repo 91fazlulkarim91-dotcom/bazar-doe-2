@@ -10,7 +10,7 @@ if (
     !mongoUri.startsWith("mongodb+srv://"))
 ) {
   throw new Error(
-    "Invalid MONGODB_URI. Check your .env.local file."
+    "Invalid MONGODB_URI. Check your environment variables."
   );
 }
 
@@ -19,6 +19,10 @@ const db = client.db("bazardor");
 
 export const auth = betterAuth({
   appName: "Bazar Dor",
+
+  baseURL:
+    process.env.BETTER_AUTH_URL ||
+    "http://localhost:3000",
 
   database: mongodbAdapter(db, { client }),
 
