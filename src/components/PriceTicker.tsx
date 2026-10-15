@@ -39,19 +39,18 @@ export default function PriceTicker() {
               {formatPrice(product.today)} টাকা/{unitMap[product.unit] || product.unit}
             </span>
             <span
-              className={`font-semibold ${
-                product.change.dir === "up"
+              className={`font-semibold ${product.change.dir === "up"
                   ? "text-red-500"
                   : product.change.dir === "down"
-                  ? "text-green-500"
-                  : "text-gray-400"
-              }`}
+                    ? "text-green-500"
+                    : "text-gray-400"
+                }`}
             >
               {product.change.dir === "up"
                 ? `▲ ${toBengaliNumber(Math.abs(product.change.pct).toFixed(1))}%`
                 : product.change.dir === "down"
-                ? `▼ ${toBengaliNumber(Math.abs(product.change.pct).toFixed(1))}%`
-                : `— ${toBengaliNumber("0.0")}%`}
+                  ? `▼ ${toBengaliNumber(Math.abs(product.change.pct).toFixed(1))}%`
+                  : `— ${toBengaliNumber("0.0")}%`}
             </span>
           </span>
         ))}

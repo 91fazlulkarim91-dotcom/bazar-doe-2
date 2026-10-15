@@ -18,7 +18,7 @@ export default function SignInPage() {
     e.preventDefault();
     setLoading(true);
 
-    const { data, error } = await signIn.email({
+    const { error } = await signIn.email({
       email,
       password,
       callbackURL: callbackUrl,
@@ -34,17 +34,27 @@ export default function SignInPage() {
   };
 
   const handleGoogleSignIn = async () => {
-    await signIn.social({
-      provider: "google",
-      callbackURL: callbackUrl,
-    });
+    try {
+      await signIn.social({
+        provider: "google",
+        callbackURL: callbackUrl,
+      });
+    } catch (error) {
+      console.error("Google sign-in failed", error);
+      toast.error("Google সাইন ইন ব্যর্থ হয়েছে। আবার চেষ্টা করুন.");
+    }
   };
 
   const handleGitHubSignIn = async () => {
-    await signIn.social({
-      provider: "github",
-      callbackURL: callbackUrl,
-    });
+    try {
+      await signIn.social({
+        provider: "github",
+        callbackURL: callbackUrl,
+      });
+    } catch (error) {
+      console.error("GitHub sign-in failed", error);
+      toast.error("GitHub সাইন ইন ব্যর্থ হয়েছে। আবার চেষ্টা করুন.");
+    }
   };
 
   return (

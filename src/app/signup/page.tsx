@@ -17,7 +17,7 @@ export default function SignUpPage() {
     e.preventDefault();
     setLoading(true);
 
-    const { data, error } = await signUp.email({
+    const { error } = await signUp.email({
       name,
       email,
       password,
@@ -33,17 +33,27 @@ export default function SignUpPage() {
   };
 
   const handleGoogleSignUp = async () => {
-    await signIn.social({
-      provider: "google",
-      callbackURL: "/",
-    });
+    try {
+      await signIn.social({
+        provider: "google",
+        callbackURL: "/",
+      });
+    } catch (error) {
+      console.error("Google sign-up failed", error);
+      toast.error("Google সাইন আপ ব্যর্থ হয়েছে। আবার চেষ্টা করুন.");
+    }
   };
 
   const handleGitHubSignUp = async () => {
-    await signIn.social({
-      provider: "github",
-      callbackURL: "/",
-    });
+    try {
+      await signIn.social({
+        provider: "github",
+        callbackURL: "/",
+      });
+    } catch (error) {
+      console.error("GitHub sign-up failed", error);
+      toast.error("GitHub সাইন আপ ব্যর্থ হয়েছে। আবার চেষ্টা করুন.");
+    }
   };
 
   return (
