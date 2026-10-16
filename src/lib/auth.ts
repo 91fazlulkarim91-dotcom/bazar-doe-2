@@ -18,14 +18,22 @@ if (
 const client = new MongoClient(mongoUri);
 const db = client.db("bazardor");
 
+const baseURL = process.env.BETTER_AUTH_URL;
+
+if (!baseURL) {
+  throw new Error(
+    "BETTER_AUTH_URL is missing. Set it in .env.local and Vercel."
+  );
+}
+
 export const auth = betterAuth({
   appName: "Bazar Dor",
 
-  baseURL:
-    process.env.BETTER_AUTH_URL ||
-    "http://localhost:3000",
+  baseURL,
 
-  database: mongodbAdapter(db, { client }),
+  database: mongodbAdapter(db, {
+    client,
+  }),
 
   trustedOrigins: [
     "http://localhost:3000",
